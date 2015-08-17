@@ -1,16 +1,14 @@
-<div class="popover">
-	<div class="arrow"></div>
-	<h3 class="popover-title">
-		{{#if title}}{{title}}{{/if}}
-		<a class="close" src="">X</a>
-	</h3>
-	{{#if content}} <div>{{{content}}}</div> {{/if}}
-	<div>
-		<a class="prev" src="">&lt;</a>
-		{{#if gotIt}}
-		<a class="got-it" src="">{{gotIt}}</a>
-		{{else}}
-		<a class="next" src="javascript:void(0);">&gt;</a>
-		{{/if}}
-	</div>
+<div class="arrow"></div>
+<h3 class="popover-title">
+	{{#if title}}{{title}}{{/if}}
+	<a class="close" src="">X</a>
+</h3>
+{{#if content}} <div>{{{content}}}</div> {{/if}}
+<div>
+	<a class="prev" src="">&lt;</a>
+	{{#if gotIt}}
+	<a class="got-it" src="">{{gotIt}}</a>
+	{{else}}
+	<a class="next" src="javascript:void(0);">&gt;</a>
+	{{/if}}
 </div>

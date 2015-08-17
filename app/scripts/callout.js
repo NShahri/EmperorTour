@@ -1,8 +1,12 @@
-define(['jquery', 'backbone', 'bootstrap/popover', 'hbs!../templates/callout'], function($, backbone, popover, calloutTemplate){
+define(['jquery', 'backbone', 'enum', 'calloutPosition', 'placement', 'hbs!../templates/callout'], function($, backbone, Enum, CalloutPosition, Placement, calloutTemplate){
 	'use strict';
 
 	var Callout = backbone.View.extend({
 		template: calloutTemplate,
+		
+		className: 'popover',
+		
+		tagName: 'div',
 		
 		initialize: function(options){
 		},
@@ -10,15 +14,6 @@ define(['jquery', 'backbone', 'bootstrap/popover', 'hbs!../templates/callout'], 
 		render: function(){
 			if(!this.rendered)
 			{
-				// var content = this.content ? this.content : this.renderTemplate();
-				// 
-				// this.$el.popover({
-				// 	content : content, 
-				// 	placement: this.placement,
-				// 	html: true,
-				// 	container: this.$el
-				// });
-
 				this.$el.html(this.renderTemplate());				
 				this.rendered = true;
 			}
@@ -27,18 +22,19 @@ define(['jquery', 'backbone', 'bootstrap/popover', 'hbs!../templates/callout'], 
 		},
 		
 		show: function(el, placement){
+			placement = Enum.validate(placement, Placement);
+			
 			this.render();
-			var popover=this.$el.find('.popover');
-			popover.removeClass(this.currentPlacement);
-			popover.addClass('fade in ' + placement);
-			popover.css('display', 'block');
-			this.currentPlacement = placement;
+			this.$el.removeClass('right left top bottom');
+			this.$el.addClass('fade in ' + placement);
+			
+			this.$el.css('display', 'block');
+			this.$el.css(new CalloutPosition().getPosition(el, this.$el, placement)); // call after make it visisble			
 		},
 		
 		hide: function(){
-			var popover=this.$el.find('.popover');
-			popover.removeClass('fade in ' + this.currentPlacement);
-			popover.css('display', '');
+			this.$el.removeClass('fade in top bottom left right');
+			this.$el.css('display', '');
 		},
 		
 		renderTemplate: function(){
@@ -48,6 +44,7 @@ define(['jquery', 'backbone', 'bootstrap/popover', 'hbs!../templates/callout'], 
 			
 			return '';
 		}
+		
 	});
 	
 	return Callout;

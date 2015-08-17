@@ -72,9 +72,10 @@ define(['class', 'underscore', 'tourCallout', 'optionsParser', 'jquery', 'promis
 		onStepPreActionsDone: function(step){
 			var stepElement = this.getStepElement(step);
 			var stepOptions = this.getStepOptions(step);
+			var stepPlacement = this.getStepPlacement(step);
 				
 			var tourCallout = this.getTourCallout(step);
-			tourCallout.show(stepElement, stepOptions);
+			tourCallout.show(stepElement, stepPlacement, stepOptions);
 		},
 		
 		runStepPostActions: function(step) {
@@ -104,6 +105,10 @@ define(['class', 'underscore', 'tourCallout', 'optionsParser', 'jquery', 'promis
 		
 		getStepOptions: function(step){
 			return step.options || {};
+		},
+				
+		getStepPlacement: function(step){
+			return step.placement || 'top';
 		}
 
 	});
