@@ -33,8 +33,14 @@ $border-radius-base:        4px !default;
 $border-radius-large:       6px !default;
 $border-radius-small:       3px !default;
 
+
+$close-font-weight:           bold !default;
+$close-color:                 #000 !default;
+$close-text-shadow:           0 1px 0 #fff !default;
+
 @import "mixins/box-shadow";
 @import "mixins/reset-text";
 @import "mixins/opacity";
 @import "tooltip";
 @import "popovers";
+@import "close";

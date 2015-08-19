@@ -2,12 +2,10 @@
   "name": "webapp",
   "private": true,
   "dependencies": {
-    "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.3",
     "backbone": "~1.2.1",
     "jquery": "~2.1.4",
     "requirejs": "~2.1.20",
-    "bootstrap": "~3.3.5",
     "require-handlebars-plugin": "https://github.com/SlexAxton/require-handlebars-plugin.git#~0.11.3",
     "backbone.class": "~0.2.0",
     "es6-promise": "~3.0.2"
