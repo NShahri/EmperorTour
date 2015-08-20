@@ -74,7 +74,8 @@ module.exports = function (grunt) {
           server: {
             baseDir: ['.tmp', config.app],
             routes: {
-              '/bower_components': './bower_components'
+              '/bower_components': './bower_components',
+              '/test': './test'
             }
           }
         }
@@ -86,9 +87,10 @@ module.exports = function (grunt) {
           logLevel: 'silent',
           host: 'localhost',
           server: {
-            baseDir: ['.tmp', './test', config.app],
+            baseDir: ['.tmp', config.app],
             routes: {
-              '/bower_components': './bower_components'
+              '/bower_components': './bower_components',
+              '/test': './test'
             }
           }
         }
@@ -131,7 +133,7 @@ module.exports = function (grunt) {
       all: {
         options: {
           run: true,
-          urls: ['http://<%= browserSync.test.options.host %>:<%= browserSync.test.options.port %>/index.html']
+          urls: ['http://<%= browserSync.test.options.host %>:<%= browserSync.test.options.port %>/test/index.html']
         }
       }
     },
@@ -354,22 +356,22 @@ module.exports = function (grunt) {
       }
     },
 
-    // Generates a custom Modernizr build that includes only the tests you
-    // reference in your app
-    modernizr: {
-      dist: {
-        devFile: 'bower_components/modernizr/modernizr.js',
-        outputFile: '<%= config.dist %>/scripts/vendor/modernizr.js',
-        files: {
-          src: [
-            '<%= config.dist %>/scripts/{,*/}*.js',
-            '<%= config.dist %>/styles/{,*/}*.css',
-            '!<%= config.dist %>/scripts/vendor/*'
-          ]
-        },
-        uglify: true
-      }
-    },
+    // // Generates a custom Modernizr build that includes only the tests you
+    // // reference in your app
+    // modernizr: {
+    //   dist: {
+    //     devFile: 'bower_components/modernizr/modernizr.js',
+    //     outputFile: '<%= config.dist %>/scripts/vendor/modernizr.js',
+    //     files: {
+    //       src: [
+    //         '<%= config.dist %>/scripts/{,*/}*.js',
+    //         '<%= config.dist %>/styles/{,*/}*.css',
+    //         '!<%= config.dist %>/scripts/vendor/*'
+    //       ]
+    //     },
+    //     uglify: true
+    //   }
+    // },
 
     // Run some tasks in parallel to speed up build process
     concurrent: {
@@ -436,7 +438,7 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'copy:dist',
-    'modernizr',
+    //'modernizr',
     'filerev',
     //'usemin',
     'htmlmin'

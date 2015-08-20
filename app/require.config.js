@@ -23,8 +23,6 @@ requirejs.config({
 		'class' : {
             deps: ['backbone'],
             exports: 'Backbone.Class'
-		},
-		'bootstrap/popover':    { deps: ['bootstrap/tooltip'], exports: '$.fn.popover' },
-		'bootstrap/tooltip':    { deps: ['jquery'], exports: '$.fn.tooltip' }
+		}
 	}
 });
