@@ -8,7 +8,18 @@ define(['jquery', 'backbone', 'enum', 'calloutPosition', 'placement', 'hbs!../te
 		
 		tagName: 'div',
 		
-		initialize: function(options){
+		constructor: function(options){
+			options = options || {};
+			
+			if(!options.model && options.content){
+				options.model = {content :  options.content};
+			}
+			
+			backbone.View.prototype.constructor.call(this, options);
+		},
+		
+		initialize: function(){
+			
 		},
 		
 		render: function(){

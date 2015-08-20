@@ -12,20 +12,19 @@
   <div id="mocha"></div>
   <script>
     (function () {
-		'use strict';
-    
-    require.config({
-			baseUrl: '/app/scripts',
-			paths: {
-				'test': '../../test/',
-				'chai': 'bower_components/chai/chai'
-			}
-		});
-    
-    if (navigator.userAgent.indexOf('PhantomJS') === -1) {
-      require(['test/runner']);
-      mocha.run();
-    }
+      'use strict';
+      
+      require.config({
+        baseUrl: '/scripts',
+        paths: {
+          'test': '../../test/',
+          'chai': '/bower_components/chai/chai'
+        }
+      });
+      
+      if (navigator.userAgent.indexOf('PhantomJS') === -1) {
+        require(['test/runner']);
+      }
     })();
   </script>
 </body>
