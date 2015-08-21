@@ -2,12 +2,12 @@ define(['jquery', 'class'], function($, Class){
 	'use strict';
 
 	var TourContainer = Class.extend({
-		initialize : function(element){
+		initialize: function(element){
 			this.element = element;
 		},
 		
 		initializeElement: function() {
-			if(!this.element){
+			if(!this.element) {
 				// set the default when we need it because initialize can happen when DOM is not ready
 				this.element = $('body');
 			}
@@ -15,7 +15,7 @@ define(['jquery', 'class'], function($, Class){
 			return this.element;
 		},
 		
-		append : function(el){
+		append: function(el){
 			return this.initializeElement().append(el);
 		}
 	});

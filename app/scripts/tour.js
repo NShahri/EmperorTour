@@ -15,15 +15,15 @@ define(['class', 'underscore', 'tourCallout', 'optionsParser', 'jquery', 'promis
 			var self = this;
 			if(currentStep)	{
 				this.runStepPreActions(currentStep).then(function(){
-					self.onStepPreActionsDone(currentStep);					
+					self.onStepPreActionsDone(currentStep);
 				});
 			}
 		},
 		
 		showNextStep: function(){
-			if(this.currentStepIndex < this.options.steps.length -1)
+			if(this.currentStepIndex < this.options.steps.length - 1)
 			{
-				this.currentStepIndex ++ ;
+				this.currentStepIndex ++;
 				this.show();
 			}
 		},
@@ -31,7 +31,7 @@ define(['class', 'underscore', 'tourCallout', 'optionsParser', 'jquery', 'promis
 		showPrevStep: function(){
 			if(this.currentStepIndex > 0)
 			{
-				this.currentStepIndex -- ;
+				this.currentStepIndex --;
 				this.show();
 			}
 		},
@@ -80,7 +80,7 @@ define(['class', 'underscore', 'tourCallout', 'optionsParser', 'jquery', 'promis
 		
 		runStepPostActions: function(step) {
 			if(step.postActions){
-				
+				//do action
 			}
 
 			return Promise.resolve();
@@ -88,7 +88,7 @@ define(['class', 'underscore', 'tourCallout', 'optionsParser', 'jquery', 'promis
 		
 		runStepPreActions: function(step) {
 			if(step.preActions){
-				
+				// do action
 			}
 			
 			return Promise.resolve();

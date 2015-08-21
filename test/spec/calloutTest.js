@@ -16,16 +16,16 @@ define(['chai', 'jquery', 'callout'], function (chai, $, Callout) {
 			});
 			
 			it('Should render the content', function () {
-				var content= 'temp content';
-				var callout = new Callout({content : content});
+				var content = 'temp content';
+				var callout = new Callout({ content: content });
 				callout.render();
 				
 				expect(callout.$el.find('.popover-content').text()).to.be.equal(content);
 			});
 	
 			it('Should render the encoded content', function () {
-				var content= '<div>temp content</div>';
-				var callout = new Callout({content : content});
+				var content = '<div>temp content</div>';
+				var callout = new Callout({ content: content });
 				callout.render();
 				
 				expect(callout.$el.find('.popover-content').text()).to.be.equal(content);

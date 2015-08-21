@@ -4,11 +4,11 @@ define(['callout', 'hbs!../templates/tourCallout'], function(Callout, tourCallou
 	var TourCallout = Callout.extend({
 		template: tourCalloutTemplate,
 		
-		events:{
-			'click a.next' : 'onNextClick',
-			'click a.prev' : 'onPrevClick',
-			'click a.got-it' : 'onGotItClick',
-			'click a.close' : 'onCloseClick',
+		events: {
+			'click a.next': 'onNextClick',
+			'click a.prev': 'onPrevClick',
+			'click a.got-it': 'onGotItClick',
+			'click a.close': 'onCloseClick'
 		},
 		
 		onNextClick: function(){

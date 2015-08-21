@@ -2,7 +2,7 @@ define(['class', 'jquery'], function(Class, $){
 	'use strict';
 
 	var ElementFinder = Class.extend({
-		initialize : function(element){
+		initialize: function(element){
 			this.element = element;
 		},
 		
@@ -15,7 +15,7 @@ define(['class', 'jquery'], function(Class, $){
 			return this.element;
 		},
 		
-		find : function(el){
+		find: function(el){
 			return el instanceof $ ? el : this.initializeElement().find(el);
 		}
 	});

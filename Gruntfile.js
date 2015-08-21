@@ -120,6 +120,13 @@ module.exports = function (grunt) {
 
     // Make sure code styles are up to par and there are no obvious mistakes
     eslint: {
+      options: {
+        envs: [ 'amd' ],
+        rules: {
+          'no-trailing-spaces': [ 2, { 'skipBlankLines': true }],
+          'eol-last': 0
+        }
+      },
       target: [
         'Gruntfile.js',
         '<%= config.app %>/scripts/{,*/}*.js',

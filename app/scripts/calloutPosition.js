@@ -9,17 +9,17 @@ define(['class', 'underscore', 'enum', 'placement'], function(Class, _, Enum, Pl
 			var calloutPos = callout[0].getBoundingClientRect();
 			var newPos = {};
 			
-			if(placement == 'right' || placement == 'left'){
+			if(placement === 'right' || placement === 'left'){
 				var top = Math.round(elPos.top + (elPos.height - calloutPos.height) / 2.0 );
-				if(placement == 'right'){
+				if(placement === 'right'){
 					newPos = { left: Math.round(elPos.right), top: top };
 				} else {
 					newPos = { left: Math.round(elPos.left - calloutPos.width),	top: top };
 				}
 			}
-			else if(placement == 'top' || placement == 'bottom'){
+			else if(placement === 'top' || placement === 'bottom'){
 				var left = Math.round(elPos.left + (elPos.width - calloutPos.width) / 2.0 );
-				if(placement == 'top'){
+				if(placement === 'top'){
 					newPos = { left: left, top: Math.round(elPos.top - calloutPos.height) };
 				} else {
 					newPos = { left: left, top: Math.round(elPos.bottom) };

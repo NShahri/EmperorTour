@@ -13,17 +13,17 @@ define(['class', 'jquery', 'underscore'], function(Class, $, _){
 		initializeSteps: function(options){
 			if(!options.steps) {
 				options.steps = [];
-			}	
+			}
 			
 			if(!_.isArray(options.steps)){
-				options.steps = [options.steps]
+				options.steps = [options.steps];
 			}
 			
 			if(options.steps.length <= 0) {
-				new Error('not valide options for tour');
+				Error('not valide options for tour');
 			}
 		}
-	})
+	});
 
 	return OptionsParser;
 });

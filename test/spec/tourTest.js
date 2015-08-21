@@ -1,5 +1,5 @@
 /* global describe, it, beforeEach, afterEach */
-define(['chai', 'callout'], function (chai, Callout) {
+define(['chai', 'tour'], function (chai, Tour) {
 	'use strict';
 
 	var expect = chai.expect;
@@ -13,6 +13,7 @@ define(['chai', 'callout'], function (chai, Callout) {
 		});
 
 		it('Should ', function () {
+			expect(new Tour()).not.be.null();
 		});
 
 	});

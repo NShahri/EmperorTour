@@ -4,7 +4,7 @@ define(['class', 'tourCallout', 'tourContainer'], function(Class, TourCallout, T
 	var TourCalloutBuilder = Class.extend({
 		initialize: function(tourContainer){
 			this.tourContainer = tourContainer || new TourContainer();
-		}, 
+		},
 		
 		build: function(step){
 			var tourCallout = new TourCallout({model: step.options});

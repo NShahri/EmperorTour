@@ -3,7 +3,7 @@ define(['jquery', 'backbone', 'enum', 'calloutPosition', 'placement', 'hbs!../te
 
 	var Callout = backbone.View.extend({
 		template: calloutTemplate,
-		
+
 		className: 'popover',
 		
 		tagName: 'div',
@@ -12,7 +12,9 @@ define(['jquery', 'backbone', 'enum', 'calloutPosition', 'placement', 'hbs!../te
 			options = options || {};
 			
 			if(!options.model && options.content){
-				options.model = {content :  options.content};
+				options.model = {
+					content: options.content
+				};
 			}
 			
 			backbone.View.prototype.constructor.call(this, options);
@@ -25,7 +27,7 @@ define(['jquery', 'backbone', 'enum', 'calloutPosition', 'placement', 'hbs!../te
 		render: function(){
 			if(!this.rendered)
 			{
-				this.$el.html(this.renderTemplate());				
+				this.$el.html(this.renderTemplate());
 				this.rendered = true;
 			}
 			
@@ -40,7 +42,9 @@ define(['jquery', 'backbone', 'enum', 'calloutPosition', 'placement', 'hbs!../te
 			this.$el.addClass('fade in ' + placement);
 			
 			this.$el.css('display', 'block');
-			this.$el.css(new CalloutPosition().getPosition(el, this.$el, placement)); // call after make it visisble			
+			
+			// call after make it visisble
+			this.$el.css(new CalloutPosition().getPosition(el, this.$el, placement));
 		},
 		
 		hide: function(){
