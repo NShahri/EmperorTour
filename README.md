@@ -12,6 +12,22 @@ The desiging and implementation of this library are as follows:
  - Configurable (Accept tour config when be initialized)
  - Easily customizable (change behaviour easily by using events or overriding methods)
 
+## How to run
+
+### build the package 
+Run the following command to run linting, testing and building process.
+> grunt
+You can find the final package in 'dist' folder. 
+
+### run on dev machine	
+To build and setup the server which serve the sample and test files follow these steps
+ - Runt the following command
+> grunt server 
+ - This command setup the web server on port 9000
+ 	- The sample file is hosted on (http://localhost:9000/)[http://localhost:9000/]
+ 	- The test page is hosted on (http://localhost:9000/test/)[http://localhost:9000/test/]
+ - You can use port 9000 when it is not used by any other app in your machine. You can change this configuration by updatin "Gruntfile.js"
+  
 ## Architecture
 
 ![](./doc/tour.png)
