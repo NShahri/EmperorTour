@@ -22,10 +22,11 @@ You can find the final package in 'dist' folder.
 ### Run on DEV machine	
 To build and setup the server which serve the sample and test files follow these steps
  - Runt the following command
- > grunt serve 
+ 
+  > grunt serve 
  - This command setup the web server on port 9000
- 	- The sample file is hosted on [http://localhost:9000/](http://localhost:9000/)
- 	- The test page is hosted on [http://localhost:9000/test/](http://localhost:9000/test/)
+  - The sample file is hosted on [http://localhost:9000/](http://localhost:9000/){:target="_blank"}
+  - The test page is hosted on [http://localhost:9000/test/](http://localhost:9000/test/){:target="_blank"}
  - You can use port 9000 when it is not used by any other app in your machine. You can change this configuration by updatin "Gruntfile.js"
   
 ## Architecture
