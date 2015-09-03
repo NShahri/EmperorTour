@@ -1,12 +1,12 @@
-define(['class', 'underscore', 'enum', 'placement'], function(Class, _, Enum, Placement){
+define(['class'], function(Class){
 	'use strict';
 
 	var CalloutPosition = Class.extend({
-		getPosition: function(el, callout, placement){
-			placement = Enum.validate(placement, Placement);
+		getPosition: function(el, callout){
+			var placement = callout.placement;
 			
 			var elPos = el[0].getBoundingClientRect();
-			var calloutPos = callout[0].getBoundingClientRect();
+			var calloutPos = callout.$el[0].getBoundingClientRect();
 			var newPos = {};
 			
 			if(placement === 'right' || placement === 'left'){
@@ -27,6 +27,11 @@ define(['class', 'underscore', 'enum', 'placement'], function(Class, _, Enum, Pl
 			}
 				
 			return newPos;
+		},
+		
+		setPosition: function(callout, position){
+			// call after make it visisble
+			callout.$el.css(position);
 		}
 	});
 	

@@ -1,4 +1,4 @@
-define(['class', 'underscore', 'tourCallout', 'optionsParser', 'jquery', 'promise', 'elementFinder', 'TourCalloutBuilder'], function(Class, _, TourCallout, OptionsParser, $, Promise, ElementFinder, TourCalloutBuilder){
+define(['class', 'underscore', 'tourCallout', 'optionsParser', 'jquery', 'promise', 'elementFinder', 'TourCalloutBuilder', 'calloutPosition'], function(Class, _, TourCallout, OptionsParser, $, Promise, ElementFinder, TourCalloutBuilder, CalloutPosition){
 	'use strict';
 
 	var Tour = Class.extend({
@@ -71,11 +71,14 @@ define(['class', 'underscore', 'tourCallout', 'optionsParser', 'jquery', 'promis
 		
 		onStepPreActionsDone: function(step){
 			var stepElement = this.getStepElement(step);
-			var stepOptions = this.getStepOptions(step);
-			var stepPlacement = this.getStepPlacement(step);
 				
 			var tourCallout = this.getTourCallout(step);
-			tourCallout.show(stepElement, stepPlacement, stepOptions);
+			tourCallout.show();
+			
+			// call after make it visisble
+			var calloutPosition = new CalloutPosition();
+			var position = calloutPosition.getPosition(stepElement, tourCallout);
+			calloutPosition.setPosition(tourCallout, position);
 		},
 		
 		runStepPostActions: function(step) {
@@ -108,7 +111,7 @@ define(['class', 'underscore', 'tourCallout', 'optionsParser', 'jquery', 'promis
 		},
 				
 		getStepPlacement: function(step){
-			return step.placement || 'top';
+			return step.placement;
 		}
 
 	});

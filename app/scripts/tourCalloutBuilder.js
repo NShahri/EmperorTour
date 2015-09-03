@@ -7,7 +7,7 @@ define(['class', 'tourCallout', 'tourContainer'], function(Class, TourCallout, T
 		},
 		
 		build: function(step){
-			var tourCallout = new TourCallout({model: step.options});
+			var tourCallout = new TourCallout({model: step.options, placement: step.placement});
 			
 			this.tourContainer.append(tourCallout.$el);
 							

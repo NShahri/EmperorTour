@@ -1,11 +1,9 @@
-define(['jquery', 'backbone', 'enum', 'calloutPosition', 'placement', 'hbs!../templates/callout'], function($, backbone, Enum, CalloutPosition, Placement, calloutTemplate){
+define(['jquery', 'backbone', 'enum', 'placement', 'hbs!../templates/callout'], function($, backbone, Enum, Placement, calloutTemplate){
 	'use strict';
 
 	var Callout = backbone.View.extend({
 		template: calloutTemplate,
 
-		className: 'popover',
-		
 		tagName: 'div',
 		
 		constructor: function(options){
@@ -17,11 +15,17 @@ define(['jquery', 'backbone', 'enum', 'calloutPosition', 'placement', 'hbs!../te
 				};
 			}
 			
+			this.placement = Enum.validate(options.placement, Placement);
+			
 			backbone.View.prototype.constructor.call(this, options);
 		},
 		
 		initialize: function(){
 			
+		},
+		
+		className: function(){
+			return 'popover ' + this.placement;
 		},
 		
 		render: function(){
@@ -34,21 +38,14 @@ define(['jquery', 'backbone', 'enum', 'calloutPosition', 'placement', 'hbs!../te
 			return this;
 		},
 		
-		show: function(el, placement){
-			placement = Enum.validate(placement, Placement);
-			
+		show: function(){
 			this.render();
-			this.$el.removeClass('right left top bottom');
-			this.$el.addClass('fade in ' + placement);
-			
+			this.$el.addClass('fade in');
 			this.$el.css('display', 'block');
-			
-			// call after make it visisble
-			this.$el.css(new CalloutPosition().getPosition(el, this.$el, placement));
 		},
 		
 		hide: function(){
-			this.$el.removeClass('fade in top bottom left right');
+			this.$el.removeClass('fade in');
 			this.$el.css('display', '');
 		},
 		

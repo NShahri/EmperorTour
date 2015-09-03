@@ -1,14 +1,14 @@
 <div class="arrow"></div>
 <h3 class="popover-title">
 	{{#if title}}{{title}}{{/if}}
-	<a class="close" href="">X</a>
+	<button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
 </h3>
 {{#if content}}<div class="popover-content">{{{content}}}</div>{{/if}}
 <div class="popover-footer">
-	<a class="prev" href="">&lt;</a>
+	<button type="button" class="btn btn-default btn-xs prev">&lt;</button>
 	{{#if gotIt}}
-	<a class="got-it" href="">{{gotIt}}</a>
+	<button type="button" class="btn btn-default btn-xs git-it">{{gotIt}}</button>
 	{{else}}
-	<a class="next" href="javascript:void(0);">&gt;</a>
+	<button type="button" class="btn btn-primary btn-xs next">&gt;</button>
 	{{/if}}
 </div>

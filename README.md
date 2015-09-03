@@ -1,5 +1,7 @@
 # EmperorTour
 
+** THIS IS NOT FINAL CODE AND IT IS UNDER DEVELOPMENT **
+
 ## About EmperorTour
 
 EmperorTour is free open source tour library in javascript.
@@ -15,7 +17,7 @@ The desiging and implementation of this library are as follows:
 ## How to run
 
 ### Build the package 
-Run the following command for linting, testing and building process.
+Run the following command for linting, testing and building package.
 > grunt
 You can find the final package in 'dist' folder. 
 

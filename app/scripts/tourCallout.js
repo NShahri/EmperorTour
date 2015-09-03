@@ -5,10 +5,10 @@ define(['callout', 'hbs!../templates/tourCallout'], function(Callout, tourCallou
 		template: tourCalloutTemplate,
 		
 		events: {
-			'click a.next': 'onNextClick',
-			'click a.prev': 'onPrevClick',
-			'click a.got-it': 'onGotItClick',
-			'click a.close': 'onCloseClick'
+			'click .next': 'onNextClick',
+			'click .prev': 'onPrevClick',
+			'click .got-it': 'onGotItClick',
+			'click .close': 'onCloseClick'
 		},
 		
 		onNextClick: function(){
@@ -20,10 +20,12 @@ define(['callout', 'hbs!../templates/tourCallout'], function(Callout, tourCallou
 		},
 		
 		onGotItClick: function(){
+			this.hide();
 			this.trigger('gotIt');
 		},
 		
 		onCloseClick: function(){
+			this.hide();
 			this.trigger('close');
 		}
 		
