@@ -19,6 +19,7 @@ The desiging and implementation of this library are as follows:
 ### Build the package 
 Run the following command for linting, testing and building package.
 > grunt
+
 You can find the final package in 'dist' folder. 
 
 ### Run on DEV machine	
